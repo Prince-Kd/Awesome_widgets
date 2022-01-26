@@ -26,3 +26,31 @@ class _DateWidgetState extends State<DateWidget> {
     );
   }
 }
+
+class TimeWidget extends StatefulWidget {
+  const TimeWidget({Key? key}) : super(key: key);
+
+  @override
+  _TimeWidgetState createState() => _TimeWidgetState();
+}
+
+class _TimeWidgetState extends State<TimeWidget> {
+  TimeOfDay _selectedTime = TimeOfDay.now();
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        ElevatedButton(onPressed: (){
+          Future result = showTimePicker(context: context, initialTime: _selectedTime);
+          result.then((value){
+            setState(() {
+              _selectedTime = value;
+            });
+          });
+        }, child: const Text('open time picker')),
+        Text('New time: ${_selectedTime.hour}:${_selectedTime.minute} ${_selectedTime.period.name}', style: TextStyle(fontSize: 20, fontWeight: FontWeight.w700),)
+      ],
+    );
+  }
+}
+

@@ -53,7 +53,8 @@ class _MyHomePageState extends State<MyHomePage> {
               trailing: Popup(),
             ),
             AnimOne(),
-            DateWidget()
+            DateWidget(),
+            TimeWidget()
 
           ],
         )));
