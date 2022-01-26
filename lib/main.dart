@@ -1,6 +1,7 @@
 import 'package:awesome_widgets/widgets/animations.dart';
 import 'package:awesome_widgets/widgets/chips.dart';
 import 'package:awesome_widgets/widgets/custom_search.dart';
+import 'package:awesome_widgets/widgets/date_time.dart';
 import 'package:awesome_widgets/widgets/popup_menu.dart';
 import 'package:awesome_widgets/widgets/tiles.dart';
 import 'package:flutter/material.dart';
@@ -51,7 +52,8 @@ class _MyHomePageState extends State<MyHomePage> {
               title: Text('Popup menu'),
               trailing: Popup(),
             ),
-            AnimOne()
+            AnimOne(),
+            DateWidget()
 
           ],
         )));
