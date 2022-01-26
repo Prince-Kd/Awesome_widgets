@@ -8,11 +8,20 @@ class AnimOne extends StatefulWidget{
 }
 
 class _AnimOneState extends State<AnimOne>  with TickerProviderStateMixin {
+  AnimationController? _controller;
+  @override
+  void initState(){
+    super.initState();
+    _controller = AnimationController(vsync: this, duration: Duration(milliseconds: 500));
+  }
+  bool isAnimated = false;
   @override
   Widget build(BuildContext context) {
-    AnimationController _controller = AnimationController(vsync: this, duration: Duration(milliseconds: 500));
     return InkWell(onTap: (){
-      _controller.reverse();
-    },child: AnimatedIcon(icon: AnimatedIcons.menu_close, progress: _controller));
+      setState(() {
+        isAnimated = !isAnimated;
+        isAnimated ? _controller!.forward() : _controller!.reverse();
+      });
+    },child: AnimatedIcon(icon: AnimatedIcons.menu_close, progress: _controller!));
   }
 }
