@@ -55,6 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
             AnimOne(),
             DateWidget(),
             TimeWidget(),
+            TileTwo(),
           ],
         )));
   }
